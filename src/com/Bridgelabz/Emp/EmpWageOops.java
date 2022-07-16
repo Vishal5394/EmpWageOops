@@ -4,12 +4,13 @@ public class EmpWageOops {
 	static final int Is_Present = 1;
 	static final int Is_PartTime = 2;
 	static int Emp_wage_per_hr = 20;
+	static int No_Of_Working_Days = 20;
 
 	void  Welcome(){
 		System.out.println("Welcome to Employee Wage Computation Program"); 
 	}
-	void UsingSwitch() {
-		int  Employeehr = 0 , Daily_Wage = 0;
+	void getMonthlyWage() {
+		int  Employeehr = 0 , Daily_Wage = 0, Total_Wage = 0;
 		
 		int Attendance = (int)Math.floor(Math.random()*10)%3;
 		
@@ -31,14 +32,16 @@ public class EmpWageOops {
 		}
 			
 		Daily_Wage = Emp_wage_per_hr  *Employeehr;
+		Total_Wage = Daily_Wage * No_Of_Working_Days;
 		
 		System.out.println("Employee Daily Wage is = "+Daily_Wage);
+		System.out.println("Employee Monthly Total Wage is = "+Total_Wage);
 	}
 
 	public static void main(String[] args) {
 		EmpWageOops obj = new EmpWageOops();
 		obj.Welcome();
-		obj.UsingSwitch();
+		obj.getMonthlyWage();
 
 	}
 
