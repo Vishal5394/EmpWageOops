@@ -1,29 +1,33 @@
 package com.Bridgelabz.Emp;
 
 public class EmpWageOops {
-	static int Is_Present = 1;
-	static int Is_PartTime = 2;
+	static final int Is_Present = 1;
+	static final int Is_PartTime = 2;
 	static int Emp_wage_per_hr = 20;
 
 	void  Welcome(){
 		System.out.println("Welcome to Employee Wage Computation Program"); 
 	}
-	void Check_Wage() {
+	void UsingSwitch() {
 		int  Employeehr = 0 , Daily_Wage = 0;
 		
-		double Attendance = Math.floor(Math.random()*10)%3;
+		int Attendance = (int)Math.floor(Math.random()*10)%3;
 		
-		if (Attendance == Is_Present) {
+		switch (Attendance) {
+		 case Is_Present:
 			Employeehr = 8;
-		System.out.println("Employee is Present ");
-		}
-		else if (Attendance == Is_PartTime) {
+				System.out.println("Employee is Present ");
+				break;
+		
+		case Is_PartTime :
 			Employeehr = 4;
-		System.out.println("Employee is Present Part Time ");
-		}
-		else {
+			 System.out.println("Employee is Present Part Time ");
+			 break;
+			 
+		default:
 			Employeehr = 0;
 		System.out.println("Employee is Absent ");
+		break;
 		}
 			
 		Daily_Wage = Emp_wage_per_hr  *Employeehr;
@@ -34,7 +38,7 @@ public class EmpWageOops {
 	public static void main(String[] args) {
 		EmpWageOops obj = new EmpWageOops();
 		obj.Welcome();
-		obj.Check_Wage();
+		obj.UsingSwitch();
 
 	}
 
